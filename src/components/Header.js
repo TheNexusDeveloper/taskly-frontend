@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, Container, NavDropdown, Button } from 'react-bootstrap'
 
 function Header() {
   return (
@@ -7,8 +7,8 @@ function Header() {
         <Container>
             <Navbar.Brand>Dashboard</Navbar.Brand>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Messages</Nav.Link>
-                  <Nav.Link href="#action2">Notification</Nav.Link>
+                <Button variant='dark' size='sm'><i className='fa-light fa-messages'/></Button>
+                <Button variant='dark' size='sm'>Notification</Button>
                   <NavDropdown title="John Doe" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
