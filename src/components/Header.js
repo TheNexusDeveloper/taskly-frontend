@@ -1,14 +1,24 @@
 import React from 'react'
-import { Navbar, Nav, Container, NavDropdown, Button } from 'react-bootstrap'
+import { Navbar, Nav, Container, NavDropdown, Button, Form } from 'react-bootstrap'
 
 function Header() {
   return (
-    <Navbar fixed='top' expand='lg'>
+    <Navbar fixed='top' expand='lg' data-bs-theme="dark" bg='dark' className=' position-relative'>
         <Container>
             <Navbar.Brand>Dashboard</Navbar.Brand>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Button variant='dark' size='sm'><i className='fa-light fa-messages'/></Button>
-                <Button variant='dark' size='sm'>Notification</Button>
+            <Nav className="justify-content-end flex-grow-1 pe-3 py-3">
+            <Form className="d-flex ">
+                <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                />
+                <Button variant="outline-success" className='me-3 '>Search</Button>
+            </Form>
+
+                <Button variant='light' className='rounded me-3'><i className="bi bi-chat-left-dots-fill" ></i></Button>
+                <Button variant='light'  className='rounded me-3'><i className="bi bi-bell-fill"></i></Button>
                   <NavDropdown title="John Doe" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -23,6 +33,8 @@ function Header() {
            </Nav>
         </Container>
     </Navbar>
+
+    // <div></div>
   )
 }
 
