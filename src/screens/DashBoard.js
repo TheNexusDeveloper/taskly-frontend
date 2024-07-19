@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Col, Row, ProgressBar } from 'react-bootstrap'
-import { BarChart, PieChart } from '@mui/x-charts'
+import { BarChart, PieChart, Gauge, gaugeClasses } from '@mui/x-charts'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
@@ -213,11 +213,11 @@ function DashBoard() {
 
         <Row className='mb-3'>
             <Col>
-                <Card lg={6} height={600}>
+                <Card lg={6} className='mb-2'>
                     <Card.Header>Overview</Card.Header>
                     <Card.Body>
                         <Row>
-                            <Col>
+                            <Col className='mb-2'>
                                 <ul>
                                     <li>Network Monitoring</li>
                                     <li>Mobile App Development </li>
@@ -229,7 +229,7 @@ function DashBoard() {
                                 </ul>
                             </Col>
 
-                            <Col>
+                            <Col className='mb-2'>
                             <PieChart
                                 series={[
                                     {
@@ -244,13 +244,53 @@ function DashBoard() {
                                 height={200}
                             />
                             </Col>
+
+                            <Col className=''>
+                                <Gauge width={100} height={100} value={50} valueMin={1} valueMax={100} />
+                                <strong>Progress Rate</strong>
+                  
+                            </Col>
+
+                            <Col className=''>
+                                <Gauge width={100} height={100} value={70} valueMin={1} valueMax={100} />
+                                <strong>Team Management</strong>
+                  
+                            </Col>
+
+                            <Col className=''>
+                                <Gauge width={100} height={100} value={30} valueMin={1} valueMax={100} />
+                                <strong>Network Downtime</strong>
+                  
+                            </Col>
                         </Row>
                     </Card.Body>
                 </Card>
             </Col>
             <Col lg={3}>
-                <Card>
+                <Card style={{height: '400px'}}>
                     <Card.Header>Planner</Card.Header>
+                    <Card.Body>
+                        <Row>
+                            {/* <Col><small>10:00</small></Col> */}
+                            <Col>
+                                <Card className='mb-3'>
+                                    <Card.Header>Meeting</Card.Header>
+                                    <Card.Body>
+                                        <p>Breakfast Meeting with the CEO</p>
+                                        <small>10:00 - 11:00</small>
+                                    </Card.Body>
+                                </Card>
+
+                                <Card className='mb-3'>
+                                    <Card.Header>Break Time</Card.Header>
+                                    <Card.Body>
+                                        <p>Lunch Break</p>
+                                        <small>12:00 - 13:00</small>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </Card.Body>
                 </Card>
             </Col>
             <Col lg={3}>
