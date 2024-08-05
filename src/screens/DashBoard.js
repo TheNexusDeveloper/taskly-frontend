@@ -31,7 +31,7 @@ function DashBoard() {
         <Row className='mb-3 py-3'>
             <Col >
                 <Row>
-                    <h5>My Tasks</h5>
+                    <h5 className='mb-3'>Welcome, John</h5>
                     <Col>
                         <Card className='mb-2' style={{}}>
                             <Card.Header>Pending Tasks</Card.Header>
@@ -129,19 +129,22 @@ function DashBoard() {
         </Row>
 
         <Row className='mb-3'>
-            <Col>
+            <Col xl={9}>
                 <Card className='p-3'>
-                    <Card.Header>Analytics</Card.Header>
-
-                    <BarChart
-                    width={700}
-                    height={450}
-                    series={[
-                        { data: pData, label: 'pv', id: 'pvId' },
-                        { data: uData, label: 'uv', id: 'uvId' },
-                    ]}
-                    xAxis={[{ data: xLabels, scaleType: 'band' }]}
-                />
+                    <Card.Title className='mb-3'>Project Analytics</Card.Title>
+                    <Card.Subtitle className='mb-2 text-muted'>15 Days Overview </Card.Subtitle>
+                        <Card.Body>
+                            <BarChart
+                                width={900}
+                                height={450}
+                                series={[
+                                    { data: pData, label: 'pv', id: 'pvId' },
+                                    { data: uData, label: 'uv', id: 'uvId' },
+                                ]}
+                                xAxis={[{ data: xLabels, scaleType: 'band' }]}
+                            />
+                        </Card.Body>
+                  
                 </Card>
 
                 
